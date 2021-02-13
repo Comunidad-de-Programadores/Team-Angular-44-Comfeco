@@ -20,9 +20,9 @@ export class AuthService {
     return await this.saveUserData(user, data.user.uid);
   }
 
-  private saveUserData(user: Partial<User>, userId: string) {
+  private async saveUserData(user: Partial<User>, userId: string) {
     this.usersRef = this.firebaseDatabase.object(`users/${userId}`);
-    return this.usersRef.set(user);
+    return await this.usersRef.set(user);
   }
 
   recoverPassword(email: string) {
