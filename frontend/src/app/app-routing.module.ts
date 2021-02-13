@@ -4,21 +4,27 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: MainLayoutComponent,
     children: [
       {
-        path: "auth",
-        loadChildren: () => import("./auth/auth.module").then(m => m.AuthModule)
-      }
-    ]
-  }
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+      },
+      {
+        path: 'policy',
+        loadChildren: () => import('./policy/policy.module').then((m) => m.PolicyModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
