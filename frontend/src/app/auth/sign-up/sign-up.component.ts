@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
   form: FormGroup;
-  hide1: boolean;
-  hide2: boolean;
+  hidePassword: boolean;
+  hideConfirmPassword: boolean;
   constructor(private fb: FormBuilder) {
-    this.hide1 = true;
-    this.hide2 = true;
+    this.hidePassword = true;
+    this.hideConfirmPassword = true;
     this.initForm();
   }
 
@@ -24,12 +24,12 @@ export class SignUpComponent implements OnInit {
       {
         nick: [null, Validators.required],
         email: [null, [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$')]],
-        pass1: [null, Validators.required],
+        pass: [null, Validators.required],
         confirmPass: [null, Validators.required],
         agreeTerms: [false, Validators.requiredTrue],
       },
       {
-        validators: this.validatorEqualPasswords('pass1', 'confirmPass'),
+        validators: this.validatorEqualPasswords('pass', 'confirmPass'),
       }
     );
   }
@@ -40,18 +40,18 @@ export class SignUpComponent implements OnInit {
   }
 
   get errorEmailRequired(): boolean {
-    return this.form.get('email').errors && this.form.get('email').errors.required && this.form.get('email').touched;
+    return this.form.get('email').errors?.required && this.form.get('email').touched;
   }
 
   get errorEmailFormat(): boolean {
-    return this.form.get('email').errors && this.form.get('email').errors.pattern && this.form.get('email').touched;
+    return this.form.get('email').errors?.pattern && this.form.get('email').touched;
   }
 
-  validatorEqualPasswords(pass1: string, confirmPass: string) {
+  validatorEqualPasswords(pass: string, confirmPass: string) {
     return (control: AbstractControl) => {
-      const pass1Control = control.get(pass1);
+      const passControl = control.get(pass);
       const confirmPassControl = control.get(confirmPass);
-      if (pass1Control.value === confirmPassControl.value) {
+      if (passControl.value === confirmPassControl.value) {
         confirmPassControl.setErrors(null);
       } else {
         confirmPassControl.setErrors({ isNotEqual: false });

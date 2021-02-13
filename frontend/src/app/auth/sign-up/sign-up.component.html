@@ -22,13 +22,15 @@
           <mat-form-field class="full-width" appearance="outline">
             <input
               matInput
-              [type]="hide1 ? 'password' : 'text'"
+              [type]="hidePassword ? 'password' : 'text'"
               placeholder="Contraseña"
               autocomplete="off"
-              formControlName="pass1"
+              formControlName="pass"
             />
 
-            <mat-icon matSuffix (click)="hide1 = !hide1">{{ hide1 ? "visibility_off" : "visibility" }}</mat-icon>
+            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
             <mat-error>Ingrese su contraseña</mat-error>
           </mat-form-field>
           <mat-form-field class="full-width" appearance="outline">
@@ -36,11 +38,13 @@
               matInput
               placeholder="Confirmar contraseña"
               type="password"
-              [type]="hide2 ? 'password' : 'text'"
+              [type]="hideConfirmPassword ? 'password' : 'text'"
               autocomplete="off"
               formControlName="confirmPass"
             />
-            <mat-icon matSuffix (click)="hide2 = !hide2">{{ hide2 ? "visibility_off" : "visibility" }}</mat-icon>
+            <mat-icon matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">{{
+              hideConfirmPassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
             <mat-error>Las contraseñas deben ser iguales</mat-error>
           </mat-form-field>
           <div class="terms-conditions">
