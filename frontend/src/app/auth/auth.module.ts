@@ -8,6 +8,8 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     SharedModule,
     ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class AuthModule { }

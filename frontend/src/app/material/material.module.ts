@@ -18,6 +18,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [],
@@ -40,6 +41,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDialogModule,
     MatChipsModule,
     MatCheckboxModule,
+    MatGridListModule,
   ],
   exports: [
     MatCardModule,
@@ -59,6 +61,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDialogModule,
     MatChipsModule,
     MatCheckboxModule,
+    MatGridListModule,
   ],
 })
 export class MaterialModule {}
