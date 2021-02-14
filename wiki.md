@@ -25,6 +25,10 @@ Mover tarea a testing cuando se haga un pull request.
 
 Los recursos se encuentran en guardados en [éste link de google drive](https://drive.google.com/drive/folders/1_1h130z8dB6HI35U7SHtZCoJwYejWuYA?usp=sharing), iconos como el UI kit
 
+## Angular Material y flexboxgrid
+
+Usaremos las lineas de diseño de [angular material](https://material.angular.io/components/categories) y [flexboxgrid](http://flexboxgrid.com/)
+
 ## Daily Scrum Meeting
 
 Hora 9:00pm hora Colombia, Perú y ecuador. 8:00pm hora México.

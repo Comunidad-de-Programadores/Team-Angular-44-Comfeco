@@ -1,1 +1,62 @@
-<p>sign-up works!</p>
+<section class="signUp">
+  <div class="container">
+    <div class="signUp__content">
+      <div class="signUp__content-message">
+        <h2>¡Bienvenido!</h2>
+        <p>Para mantenerse conectado con nosotros, crea una cuenta con su información personal.</p>
+      </div>
+      <div class="signUp__content-form">
+        <h1>Crea tu cuenta</h1>
+        <form [formGroup]="form" (ngSubmit)="singUp()">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-icon matSuffix>person</mat-icon>
+            <input matInput placeholder="Nick" autocomplete="off" formControlName="nick" />
+            <mat-error>Ingrese un nick</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-icon matSuffix>email</mat-icon>
+            <input matInput placeholder="Correo electrónico" type="email" autocomplete="off" formControlName="email" />
+            <mat-error *ngIf="errorEmailRequired">Ingrese su correo electrónico</mat-error>
+            <mat-error *ngIf="errorEmailFormat">El correo electrónico no tiene el formato adecuado</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <input
+              matInput
+              [type]="hidePassword ? 'password' : 'text'"
+              placeholder="Contraseña"
+              autocomplete="off"
+              formControlName="pass"
+            />
+
+            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{
+              hidePassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+            <mat-error>Ingrese su contraseña</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <input
+              matInput
+              placeholder="Confirmar contraseña"
+              type="password"
+              [type]="hideConfirmPassword ? 'password' : 'text'"
+              autocomplete="off"
+              formControlName="confirmPass"
+            />
+            <mat-icon matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">{{
+              hideConfirmPassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+            <mat-error>Las contraseñas deben ser iguales</mat-error>
+          </mat-form-field>
+          <div class="terms-conditions">
+            <mat-checkbox class="example-margin" color="primary" formControlName="agreeTerms">Acepta los</mat-checkbox>
+            <a [routerLink]="['/policy']"><b> terminos y condiones y politicas de privacidad</b></a>
+          </div>
+          <button mat-raised-button color="primary" class="submit-btn" [disabled]="form.invalid">Regístrate</button>
+        </form>
+        <span class="ya-registrado"
+          >¿Ya estas registrado? <a [routerLink]="['/auth/sign-in']"><b>Iniciar Sesión</b></a></span
+        >
+      </div>
+    </div>
+  </div>
+</section>
