@@ -4,21 +4,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(
-    private router: Router) {
-
-    console.log(router.url);
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   isRecoverPasswordPath() {
-    return this.router.url === "/auth/recover-password";
+    return this.router.url === '/auth/recover-password';
   }
-
 }
