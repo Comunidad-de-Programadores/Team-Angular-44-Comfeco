@@ -1,16 +1,11 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My App</span>
-  <span class="example-spacer"></span>
-  <button
-    routerLink="/auth/sign-in"
-    *ngIf="isRecoverPasswordPath()"
-    mat-icon-button
-    class="example-icon favorite-icon"
-    aria-label="Example icon-button with heart icon"
+  <div class="content-logo">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+  </div>
+  <a class="iniciar-sesion" *ngIf="isRecoverPasswordPath()" aria-label="Iniciar Sesion" [routerLink]="['/auth/sign-in']"
+    >Inicio Sesion</a
   >
-    Inicio Sesion
-  </button>
 </mat-toolbar>
