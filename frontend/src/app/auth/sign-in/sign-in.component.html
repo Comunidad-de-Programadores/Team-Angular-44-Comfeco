@@ -1,1 +1,35 @@
-<p>sign-in works!</p>
+<section class="signIn">
+  <div class="container">
+    <div class="signIn__content">
+      <div class="signIn__content-form">
+        <h1>Iniciar Sesión</h1>
+        <form [formGroup]="form" (ngSubmit)=singIn()>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-icon matSuffix>email</mat-icon>
+            <input matInput placeholder="Correo electrónico" type="email" autocomplete="off" formControlName="email" />
+            <mat-error *ngIf="errorEmailRequired">Ingrese su correo electrónico</mat-error>
+            <mat-error *ngIf="errorEmailFormat">El correo electrónico no tiene el formato adecuado</mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Contraseña" autocomplete="off"
+              formControlName="password" />
+            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{
+              hidePassword ? "visibility_off" : "visibility"
+              }}</mat-icon>
+            <mat-error *ngIf="errorPasswordRequired">Ingrese su contraseña</mat-error>
+            <mat-error *ngIf="errorPasswordLength">Tu contraseña debe tener minimo 6 digitos
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" class="submit-btn" [disabled]="form.invalid">Iniciar Sesión</button>
+        </form>
+        <span class="ya-registrado">¿Aún no estas registrado? <a
+            [routerLink]="['/auth/sign-up']"><b>Registrate</b></a></span>
+      </div>
+      <div class="signIn__content-message">
+        <h2>¡Bienvenido!</h2>
+        <p>Ingresa tus datos personales y empieza a disfrutar con nostros!</p>
+      </div>
+
+    </div>
+  </div>
+</section>
