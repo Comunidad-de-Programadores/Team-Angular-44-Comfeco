@@ -50,7 +50,6 @@ export class SignUpComponent implements OnInit {
         await this.authService.signUp(userData, pass);
         this.router.navigate(['/']);
       } catch (err) {
-        console.log(err);
         if (err.code == 'auth/email-already-in-use') {
           this.snackbar
             .open(err.message, 'Olvidé mi contraseña', { duration: 4000 })
