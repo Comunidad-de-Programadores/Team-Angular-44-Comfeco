@@ -8,6 +8,14 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
+        path: 'home',
+        loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'comunities',
+        loadChildren: () => import('./comunities/comunities.module').then((m) => m.ComunitiesModule),
+      },
+      {
         path: 'auth',
         loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
       },
