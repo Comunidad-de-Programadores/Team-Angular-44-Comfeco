@@ -1,0 +1,27 @@
+<div class="count-down-card" *ngIf="counter$ | async as couterValues">
+  <div class="row">
+    <div class="col-xs-3 count-down-item">
+      <span class="count-down-value">{{ couterValues.days }}</span>
+      <span class="count-down-metric">Días</span>
+    </div>
+    <div class="col-xs-3 count-down-item">
+      <span class="count-down-value">{{ couterValues.hours }}</span>
+      <span class="count-down-metric">Horas</span>
+    </div>
+    <div class="col-xs-3 count-down-item">
+      <span class="count-down-value">{{ couterValues.minutes }}</span>
+      <span class="count-down-metric">Minutos</span>
+    </div>
+    <div class="col-xs-3 count-down-item">
+      <span class="count-down-value">{{ couterValues.seconds }}</span>
+      <span class="count-down-metric">Segundos</span>
+    </div>
+    <div class="col-xs-12">
+      <mat-progress-bar mode="determinate" value="{{ couterValues.progress }}" color="primary"></mat-progress-bar>
+    </div>
+    <div class="col-xs-12">
+      <h3 class="count-down-card-event">{{ eventName }}</h3>
+      <mat-divider></mat-divider>
+    </div>
+  </div>
+</div>
