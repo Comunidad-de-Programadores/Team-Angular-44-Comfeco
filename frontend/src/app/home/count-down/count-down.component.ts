@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, EMPTY } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { CountDown } from './count-down';
+import { CountDownEvent } from 'src/app/core/models/count-down-event.model';
+import { CountDownService } from 'src/app/core/services/count-down/count-down.service';
+import { CountDown } from './count-down.model';
 
 @Component({
   selector: 'app-count-down',
@@ -17,21 +19,29 @@ export class CountDownComponent implements OnInit {
     progress: 0,
   };
   counter$: Observable<CountDown> = EMPTY.pipe(startWith(this.counterValues));
+  eventName: string;
 
-  constructor() {}
+  constructor(private countDownService: CountDownService) {}
 
   ngOnInit(): void {
-    let startDate = new Date('Feb 10, 2021 15:37:25').getTime();
-    let countDownDate = new Date('Feb 21, 2021 15:37:25').getTime();
+    this.getCountDownEvent();
+  }
 
-    this.getCurrentDateDifference(startDate, countDownDate);
-    setInterval(() => {
-      this.getCurrentDateDifference(startDate, countDownDate);
-    }, 1000);
+  private getCountDownEvent() {
+    this.countDownService.getCountDownEvent().subscribe((countDownEvent: CountDownEvent) => {
+      let startDateZoned = new Date(countDownEvent.startDateTime);
+      let endDateZoned = new Date(countDownEvent.endDateTime);
+      this.eventName = countDownEvent.name;
+      this.getCurrentDateDifference(startDateZoned.getTime(), endDateZoned.getTime());
+      setInterval(() => {
+        this.getCurrentDateDifference(startDateZoned.getTime(), endDateZoned.getTime());
+      }, 1000);
+    });
   }
 
   getCurrentDateDifference(startDate: number, countDownDate: number): void {
     let now = new Date().getTime();
+
     let distance = countDownDate - now;
 
     this.counterValues.days = Math.floor(distance / (1000 * 60 * 60 * 24));
