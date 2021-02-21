@@ -29,8 +29,8 @@ export class CountDownComponent implements OnInit {
 
   private getCountDownEvent() {
     this.countDownService.getCountDownEvent().subscribe((countDownEvent: CountDownEvent) => {
-      let startDateZoned = new Date(countDownEvent.startDateTime);
-      let endDateZoned = new Date(countDownEvent.endDateTime);
+      const startDateZoned = new Date(countDownEvent.startDateTime);
+      const endDateZoned = new Date(countDownEvent.endDateTime);
       this.eventName = countDownEvent.name;
       this.getCurrentDateDifference(startDateZoned.getTime(), endDateZoned.getTime());
       setInterval(() => {
@@ -40,18 +40,18 @@ export class CountDownComponent implements OnInit {
   }
 
   getCurrentDateDifference(startDate: number, countDownDate: number): void {
-    let now = new Date().getTime();
+    const now = new Date().getTime();
 
-    let distance = countDownDate - now;
+    const distance = countDownDate - now;
 
     this.counterValues.days = Math.floor(distance / (1000 * 60 * 60 * 24));
     this.counterValues.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     this.counterValues.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     this.counterValues.seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    let q = Math.abs(now - startDate);
-    let d = Math.abs(countDownDate - startDate);
-    let progressPercentage = Math.round((q / d) * 100);
+    const q = Math.abs(now - startDate);
+    const d = Math.abs(countDownDate - startDate);
+    const progressPercentage = Math.round((q / d) * 100);
 
     this.counterValues.progress = progressPercentage;
 

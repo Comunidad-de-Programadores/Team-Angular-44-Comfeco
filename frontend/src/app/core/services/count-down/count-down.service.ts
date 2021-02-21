@@ -11,7 +11,7 @@ export class CountDownService {
   constructor(private firebaseDatabase: AngularFireDatabase) {}
 
   getCountDownEvent(): Observable<any> {
-    let countDownEventRef = this.firebaseDatabase.object('count-down-event');
+    const countDownEventRef = this.firebaseDatabase.object('count-down-event');
 
     return countDownEventRef.snapshotChanges().pipe(map((countDownEvent) => countDownEvent.payload.val()));
   }
