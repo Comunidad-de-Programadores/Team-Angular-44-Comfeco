@@ -21,7 +21,7 @@ export class AutomaticCarouselComponent implements OnInit {
     lazyLoad: 'ondemand',
     slidesToShow: 4,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1200,
