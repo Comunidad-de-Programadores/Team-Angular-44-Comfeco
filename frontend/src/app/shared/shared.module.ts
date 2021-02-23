@@ -5,16 +5,10 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { FooterComponent } from './components/footer/footer.component';
-
-
-
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [HeaderComponent, MainLayoutComponent, FooterComponent],
-  imports: [
-    RouterModule,
-    CommonModule,
-    MaterialModule
-  ]
+  imports: [RouterModule, CommonModule, MaterialModule, QuicklinkModule],
 })
-export class SharedModule { }
+export class SharedModule {}
