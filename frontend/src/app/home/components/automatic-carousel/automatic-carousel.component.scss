@@ -1,0 +1,24 @@
+// .carousel {
+//   overflow: visible;
+// }
+
+.slick-initialized .slick-slide {
+  text-align: center;
+}
+
+.slick-initialized .slick-slide:focus {
+  outline: none;
+}
+
+.slick-slide img {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+::ng-deep {
+  .slick-prev::before,
+  .slick-next::before {
+    color: #512da8;
+  }
+}
