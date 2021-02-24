@@ -1,0 +1,18 @@
+<div id="staticCarousel" class="content">
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)"
+    (beforeChange)="beforeChange($event)"
+  >
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <figure>
+        <img [src]="slide.img" />
+      </figure>
+    </div>
+  </ngx-slick-carousel>
+
+</div>

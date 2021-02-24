@@ -9,9 +9,10 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HomeComponent } from './home/home.component';
 import { CountDownComponent } from './components/count-down/count-down.component';
 import { AutomaticCarouselComponent } from './components/automatic-carousel/automatic-carousel.component';
+import { StaticCarouselComponent } from './components/static-carousel/static-carousel.component';
 
 @NgModule({
-  declarations: [CountDownComponent, HomeComponent, AutomaticCarouselComponent],
+  declarations: [CountDownComponent, HomeComponent, AutomaticCarouselComponent, StaticCarouselComponent],
   imports: [CommonModule, HomeRoutingModule, MaterialModule, SharedModule, CoreModule, SlickCarouselModule],
 })
 export class HomeModule {}
