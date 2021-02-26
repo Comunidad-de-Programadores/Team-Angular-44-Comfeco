@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 submodule">
+      <mat-tab-group mat-align-tabs="center" [color]="tabColor" (selectedIndexChange)="selectedIndexChange($event)">
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">person</mat-icon>
+            Mi perfi
+          </ng-template>
+          Mi perfil contenido
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">verified</mat-icon>
+            Insignias
+          </ng-template>
+          Insignias contenido
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">group</mat-icon>
+            Grupos
+          </ng-template>
+
+          Grupos contenido
+        </mat-tab>
+
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">event</mat-icon>
+            Eventos
+          </ng-template>
+
+          Eventos contenido
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
