@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, EMPTY } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { CountDownEvent } from 'src/app/core/models/count-down-event.model';
-import { CountDownService } from 'src/app/core/services/count-down/count-down.service';
+import { CountDownService } from 'src/app/core/services/count-down.service';
 import { CountDown } from './count-down.model';
 
 @Component({

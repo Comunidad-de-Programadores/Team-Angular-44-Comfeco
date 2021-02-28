@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { User } from '../../models/user/user';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',

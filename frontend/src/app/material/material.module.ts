@@ -20,6 +20,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [],
@@ -44,6 +47,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCheckboxModule,
     MatGridListModule,
     MatTabsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatMenuModule,
   ],
   exports: [
     MatCardModule,
@@ -65,6 +71,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCheckboxModule,
     MatGridListModule,
     MatTabsModule,
+    MatSidenavModule,
+    MatMenuModule,
   ],
 })
 export class MaterialModule {}
