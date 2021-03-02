@@ -1,21 +1,21 @@
-article{
+div {
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
   padding: 5px 0px;
-  div{
+  div {
     display: flex;
     align-items: center;
-    img{
+    img {
       border-radius: 50%;
       width: 50px;
     }
-    p{
+    p {
       margin: 0;
       margin-left: 20px;
     }
   }
-  a{
+  a {
     color: #9796d9;
     margin-top: 30px;
     text-decoration: none;

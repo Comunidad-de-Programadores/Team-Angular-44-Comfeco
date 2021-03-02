@@ -1,17 +1,17 @@
-.ItemContainer{
-  background-color: #c4c4c4;
-  padding: 20px;
+.item-container {
+  padding: 16px;
   max-width: 450px;
-  section{
+  margin: auto;
+  section {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 10px;
-    h3{
-      color: white;
+    h3 {
+      color: #000;
       letter-spacing: 1px;
     }
-    a{
+    a {
       color: #9796d9;
       text-decoration: none;
       font-size: 15px;

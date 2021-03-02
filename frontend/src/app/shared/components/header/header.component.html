@@ -1,11 +1,61 @@
 <mat-toolbar>
-  <div class="content-logo">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-  </div>
-  <a class="iniciar-sesion" *ngIf="isRecoverPasswordPath()" aria-label="Iniciar Sesion" [routerLink]="['/auth/sign-in']"
-    >Inicio Sesion</a
-  >
+  <mat-toolbar-row>
+    <div class="content-logo">
+      <img src="assets/images/logo.png" alt="Comfeco Logo" />
+    </div>
+    <div class="large-menu">
+      <a mat-button aria-label="Inicio" class="nav-link" routerLinkActive="active" [routerLink]="['/home']">Inicio</a>
+      <a mat-button aria-label="Comunidades" class="nav-link" routerLinkActive="active" [routerLink]="['/comunities']"
+        >Comunidades</a
+      >
+      <a mat-button aria-label="Talleres" class="nav-link" routerLinkActive="active" [routerLink]="['/workshops']"
+        >Talleres</a
+      >
+      <a
+        mat-button
+        aria-label="Creadores de contenido"
+        class="nav-link"
+        routerLinkActive="active"
+        [routerLink]="['/content-creators']"
+        >Creadores de contenido</a
+      >
+    </div>
+    <div>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <a
+        mat-button
+        class="nav-link"
+        *ngIf="isRecoverPasswordPath()"
+        aria-label="Iniciar Sesion"
+        [routerLink]="['/auth/sign-in']"
+        >Iniciar Sesión</a
+      >
+      <button mat-button [matMenuTriggerFor]="menu">
+        <img src="assets/images/profile.png" class="profile-img" alt="Comfeco Logo" /> Nickname
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Mi perfil</button>
+        <button mat-menu-item>Cerrar Sesión</button>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="small-menu">
+    <a mat-button aria-label="Inicio" routerLink="/home" routerLinkActive="active" class="nav-movile-link">Inicio</a>
+    <a mat-button aria-label="Comunidades" routerLink="/comunities" routerLinkActive="active" class="nav-movile-link"
+      >Comunidades</a
+    >
+    <a mat-button aria-label="Talleres" routerLink="/workshops" routerLinkActive="active" class="nav-movile-link"
+      >Talleres</a
+    >
+    <a
+      mat-button
+      aria-label="Creadores de contenido"
+      routerLink="/content-creators"
+      routerLinkActive="active"
+      class="nav-movile-link"
+      >Creadores</a
+    >
+  </mat-toolbar-row>
 </mat-toolbar>
