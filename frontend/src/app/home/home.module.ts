@@ -12,7 +12,6 @@ import { AutomaticCarouselComponent } from './components/automatic-carousel/auto
 import { StaticCarouselComponent } from './components/static-carousel/static-carousel.component';
 import { ComunitiesComponent } from './containers/comunities/comunities.component';
 import { ItemCommunitiesComponent } from './components/item-communities/item-communities.component';
-import { RecentActivityComponent } from './components/recent-activity/recent-activity.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { RecentActivityComponent } from './components/recent-activity/recent-act
     StaticCarouselComponent,
     ComunitiesComponent,
     ItemCommunitiesComponent,
-    RecentActivityComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, MaterialModule, SharedModule, CoreModule, SlickCarouselModule],
 })
