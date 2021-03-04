@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from '../models/user.model';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +35,16 @@ export class AuthService {
     return this.firebaseAuth.signOut();
   }
 
-  hasUser() {
+  getAuthState() {
     return this.firebaseAuth.authState;
+  }
+
+  getCurrentUser(userID: string) {
+    this.usersRef = this.firebaseDatabase.object(`users/${userID}`);
+    return this.usersRef.snapshotChanges().pipe(
+      map((snapshot) => {
+        return { ...snapshot.payload.val(), id: snapshot.key };
+      })
+    );
   }
 }

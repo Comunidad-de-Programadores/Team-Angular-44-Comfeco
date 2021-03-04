@@ -1,4 +1,7 @@
 mat-toolbar {
+  background: #ffffff;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+
   mat-toolbar-row {
     justify-content: space-between;
     align-items: center;
@@ -27,7 +30,7 @@ mat-toolbar {
     .nav-movile-link.active,
     .nav-link.active {
       border-radius: 0;
-      border-bottom: solid 1px #4527a0;
+      border-bottom: solid 2px #FFC107;
     }
   }
 }
