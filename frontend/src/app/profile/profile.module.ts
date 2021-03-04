@@ -8,9 +8,10 @@ import { MaterialModule } from '../material/material.module';
 import { CoreModule } from '../core/core.module';
 import { MyProfileComponent } from './containers/my-profile/my-profile.component';
 import { ProfileDetailsComponent } from './components/profile-details/profile-details.component';
+import { RegisteredEventsComponent } from './components/registered-events/registered-events.component';
 
 @NgModule({
-  declarations: [SubmoduleComponent, MyProfileComponent, ProfileDetailsComponent],
+  declarations: [SubmoduleComponent, MyProfileComponent, ProfileDetailsComponent, RegisteredEventsComponent],
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule],
 })
 export class ProfileModule {}

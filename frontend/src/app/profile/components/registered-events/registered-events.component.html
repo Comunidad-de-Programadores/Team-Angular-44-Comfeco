@@ -1,0 +1,24 @@
+<mat-card class="events-card">
+  <mat-card-title class="title">
+      <p>Eventos de tu interes</p>
+    <a mat-button color="primary">Ver más</a>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-card class="card-content" *ngFor="let event of events">
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <img [src]="event.img" alt="">
+                </div>
+                <div class="col-xs-12 text-center">
+                    <p>{{event.name}}</p>
+                </div>
+                <div class="col-xs-12 text-center">
+                  <a mat-stroked-button color="primary">Más información</a>
+                </div>
+              </div>
+        </mat-card-content>
+    </mat-card>  
+  </mat-card-content>
+
+</mat-card>
