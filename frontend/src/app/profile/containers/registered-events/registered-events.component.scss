@@ -1,0 +1,19 @@
+.events-card {
+  max-width: 360px;
+  margin: 16px auto;
+  background-color: #FCFCFC;
+  height: 60vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  .title{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p{
+          font-size: 0.7em;
+          margin: 0;
+      }
+  }
+}
+
+
