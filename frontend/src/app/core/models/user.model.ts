@@ -5,4 +5,11 @@ export interface User {
   email: string;
   profession: string;
   bio: string;
+  gender: number;
+  birthday: string | number;
+  country: string | number;
+  github?: string;
+  linkedin?: string;
+  twitter?: string;
+  facebook?: string;
 }
