@@ -1,0 +1,116 @@
+.editProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  &__content {
+    .back {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .photo {
+      display: flex;
+      justify-content: center;
+      padding: 30px 0 50px 0;
+      &__content {
+        width: 150px;
+        height: 150px;
+        margin: 0;
+        border-radius: 50%;
+        border: 3px solid #000;
+        overflow: hidden;
+        position: relative;
+
+        .preview-img {
+          max-width: 100%;
+        }
+
+        .profile {
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          max-width: 100%;
+          vertical-align: bottom;
+        }
+      }
+
+      .file-upload {
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        cursor: pointer;
+      }
+
+      .camara {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        background: #fff;
+        height: 50px;
+
+        img {
+          width: 100%;
+          max-width: 20px;
+          vertical-align: bottom;
+          position: relative;
+          top: 12px;
+        }
+      }
+    }
+
+    .network {
+      display: flex;
+      align-items: center;
+      padding-bottom: 1.34375em;
+      margin: 0.25em 0;
+      max-width: 170px;
+      width: 100%;
+      &__image {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        img {
+          max-width: 100%;
+          vertical-align: bottom;
+        }
+      }
+
+      &__name {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-icon {
+  cursor: pointer;
+}
