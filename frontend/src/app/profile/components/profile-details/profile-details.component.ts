@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { User } from 'src/app/core/models/user.model';
-import { EditPasswordComponent } from '../edit-password/edit-password.component';
+import { EditCredentialsComponent } from '../edit-credentials/edit-credentials.component';
 
 @Component({
   selector: 'app-profile-details',
@@ -16,15 +16,9 @@ export class ProfileDetailsComponent implements OnInit {
   ngOnInit(): void {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(EditPasswordComponent, {
+    this.dialog.open(EditCredentialsComponent, {
       width: '550px',
-      height: '400px',
-      data: { name: 'this.name', animal: ' this.animal' },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      // this.animal = result;
+      data: { id: this.profile.id, email: this.profile.email },
     });
   }
 

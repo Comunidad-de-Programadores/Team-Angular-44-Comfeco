@@ -29,17 +29,6 @@
         </div>
         <div class="col-xs-12 col-md-6 col-lg-6">
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Email</mat-label>
-            <mat-icon matSuffix>email</mat-icon>
-            <input matInput placeholder="Correo electrónico" type="email" autocomplete="off" formControlName="email" />
-            <mat-error *ngIf="errorEmailRequired">Ingrese su correo electrónico</mat-error>
-            <mat-error *ngIf="errorEmailFormat">El correo electrónico no tiene el formato adecuado</mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-4">
-          <mat-form-field class="full-width" appearance="outline">
             <mat-label>Género</mat-label>
             <mat-select formControlName="gender">
               <mat-option *ngFor="let gender of genders" [value]="gender.id">
@@ -49,7 +38,9 @@
             <mat-error>Campo requerido</mat-error>
           </mat-form-field>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-6">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Fecha de nacimiento</mat-label>
             <input matInput type="text" [matDatepicker]="picker" formControlName="birthday" />
@@ -58,7 +49,7 @@
             <mat-error>Campo requerido</mat-error>
           </mat-form-field>
         </div>
-        <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="col-xs-12 col-md-6 col-lg-6">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Pais</mat-label>
             <mat-select formControlName="country">
@@ -70,45 +61,6 @@
           </mat-form-field>
         </div>
       </div>
-      <!-- <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Contraseña</mat-label>
-            <input
-              matInput
-              [type]="hidePassword ? 'password' : 'text'"
-              placeholder="Contraseña"
-              autocomplete="off"
-              formControlName="pass"
-            />
-
-            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{
-              hidePassword ? "visibility_off" : "visibility"
-            }}</mat-icon>
-            <mat-error>Ingrese su contraseña</mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-6">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Confirmar contraseña</mat-label>
-            <input
-              matInput
-              placeholder="Confirmar contraseña"
-              type="password"
-              [type]="hideConfirmPassword ? 'password' : 'text'"
-              autocomplete="off"
-              formControlName="confirmPass"
-            />
-            <mat-icon matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">{{
-              hideConfirmPassword ? "visibility_off" : "visibility"
-            }}</mat-icon>
-            <mat-error *ngIf="formPerfil.get('confirmPass').errors?.required">Campo requerido</mat-error>
-            <mat-error *ngIf="formPerfil.get('confirmPass').errors?.isNotEqual"
-              >Las contraseñas deben ser iguales</mat-error
-            >
-          </mat-form-field>
-        </div>
-      </div> -->
       <div class="row">
         <div class="col-xs-12 col-md-6 col-lg-6">
           <div class="d-flex">
@@ -121,11 +73,7 @@
               </div>
             </div>
             <mat-form-field class="full-width" appearance="outline">
-              <!-- <mat-label>Nick</mat-label> -->
-              <!-- <mat-icon matSuffix>person</mat-icon> -->
               <input matInput type="text" autocomplete="off" formControlName="github" />
-              <!-- <mat-error *ngIf="errorEmailRequired">Ingrese su correo electrónico</mat-error> -->
-              <!-- <mat-error *ngIf="errorEmailFormat">El correo electrónico no tiene el formato adecuado</mat-error> -->
             </mat-form-field>
           </div>
         </div>

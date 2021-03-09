@@ -59,61 +59,18 @@ export class EditProfileComponent implements OnInit, OnChanges {
   }
 
   initForm(): void {
-    this.formPerfil = this.fb.group(
-      {
-        nickname: [null, Validators.required],
-        email: [
-          null,
-          [
-            Validators.required,
-            Validators.pattern(
-              /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            ),
-          ],
-        ],
-        gender: [null, Validators.required],
-        birthday: [null, Validators.required],
-        country: [null, Validators.required],
-        // pass: [null, Validators.required],
-        // confirmPass: [null, Validators.required],
-        github: [null],
-        linkedin: [null],
-        facebook: [null],
-        twitter: [null],
-        bio: [null],
-      }
-      // {
-      //   validators: this.validatorEqualPasswords('pass', 'confirmPass'),
-      // }
-    );
+    this.formPerfil = this.fb.group({
+      nickname: [null, Validators.required],
+      gender: [null, Validators.required],
+      birthday: [null, Validators.required],
+      country: [null, Validators.required],
+      github: [null],
+      linkedin: [null],
+      facebook: [null],
+      twitter: [null],
+      bio: [null],
+    });
   }
-
-  get errorEmailRequired(): boolean {
-    return this.formPerfil.get('email').errors?.required && this.formPerfil.get('email').touched;
-  }
-
-  get errorEmailFormat(): boolean {
-    return this.formPerfil.get('email').errors?.pattern && this.formPerfil.get('email').touched;
-  }
-
-  // validatorEqualPasswords(pass: string, confirmPass: string) {
-  //   return (control: AbstractControl) => {
-  //     const passControl = control.get(pass);
-  //     const confirmPassControl = control.get(confirmPass);
-  //     if (passControl.value === confirmPassControl.value) {
-  //       if (!confirmPassControl.value) {
-  //         confirmPassControl.setErrors({ required: true });
-  //       } else {
-  //         confirmPassControl.setErrors(null);
-  //       }
-  //     } else {
-  //       confirmPassControl.setErrors({ isNotEqual: true });
-  //       return { isNotEqual: false };
-  //     }
-
-  //     return null;
-  //   };
-  // }
 
   fileChangeEvent(event: Event): void {
     const input = event.target as HTMLInputElement;

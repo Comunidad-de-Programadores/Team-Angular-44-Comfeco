@@ -3,7 +3,8 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angula
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from '../models/user.model';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +34,39 @@ export class AuthService {
 
   recoverPassword(email: string) {
     return this.firebaseAuth.sendPasswordResetEmail(email);
+  }
+
+  async updatePassword(
+    currentEmail: string,
+    newEmail: string,
+    currentPassword: string,
+    newPassword: string,
+    userId: string
+  ) {
+    // let credential;
+    // const user = await this.firebaseAuth.currentUser;
+    // credential = await firebase.default.auth.EmailAuthProvider.credential(currentEmail, currentPassword);
+    // const userCredential = await user.reauthenticateWithCredential(credential);
+    // await userCredential.user.updatePassword(newPassword);
+    // if (userCredential.user.email !== newEmail) {
+    //   await userCredential.user.updateEmail(newEmail);
+    // }
+
+    // credential = await firebase.default.auth.EmailAuthProvider.credential(
+    //   userCredential.user.email !== newEmail ? currentEmail : newEmail,
+    //   newPassword
+    // );
+
+    // return await user.reauthenticateWithCredential(credential);
+    const userCredential = await this.firebaseAuth.signInWithEmailAndPassword(currentEmail, currentPassword);
+    await userCredential.user.updatePassword(newPassword);
+    if (userCredential.user.email !== newEmail) {
+      await userCredential.user.updateEmail(newEmail);
+      await this.firebaseDatabase.object(`users/${userId}`).update({ email: newEmail });
+      return await this.firebaseAuth.signInWithEmailAndPassword(newEmail, newPassword);
+    } else {
+      return userCredential;
+    }
   }
 
   logout() {

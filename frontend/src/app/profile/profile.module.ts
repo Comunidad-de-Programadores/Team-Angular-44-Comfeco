@@ -13,7 +13,7 @@ import { EventDetailComponent } from './components/event-detail/event-detail.com
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { EditPasswordComponent } from './components/edit-password/edit-password.component';
+import { EditCredentialsComponent } from './components/edit-credentials/edit-credentials.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { EditPasswordComponent } from './components/edit-password/edit-password.
     RegisteredEventsComponent,
     EventDetailComponent,
     EditProfileComponent,
-    EditPasswordComponent,
+    EditCredentialsComponent,
   ],
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule, ReactiveFormsModule],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
