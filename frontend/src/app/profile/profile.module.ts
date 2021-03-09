@@ -12,6 +12,8 @@ import { RegisteredEventsComponent } from './containers/registered-events/regist
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { EditPasswordComponent } from './components/edit-password/edit-password.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisteredEventsComponent,
     EventDetailComponent,
     EditProfileComponent,
+    EditPasswordComponent,
   ],
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule, ReactiveFormsModule],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
 })
 export class ProfileModule {}

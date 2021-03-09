@@ -15,7 +15,7 @@
     </ng-container>
     <ng-container *ngIf="showProfile">
       <div class="col-xs-12 col-md-12">
-        <app-edit-profile (hideEditProfile)="showProfile = $event"></app-edit-profile>
+        <app-edit-profile [profile]="profileData$ | async" (hideEditProfile)="showProfile = $event"></app-edit-profile>
       </div>
     </ng-container>
   </div>

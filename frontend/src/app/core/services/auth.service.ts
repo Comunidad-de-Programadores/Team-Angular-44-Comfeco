@@ -27,6 +27,10 @@ export class AuthService {
     return await this.usersRef.set(user);
   }
 
+  updateUser(user: User, userId: string) {
+    return this.firebaseDatabase.object(`users/${userId}`).update(user);
+  }
+
   recoverPassword(email: string) {
     return this.firebaseAuth.sendPasswordResetEmail(email);
   }

@@ -12,6 +12,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
     AngularFireDatabaseModule,
     QuicklinkModule,
     AngularFirestoreModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
