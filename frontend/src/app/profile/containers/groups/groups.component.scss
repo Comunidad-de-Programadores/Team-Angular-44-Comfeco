@@ -1,0 +1,13 @@
+.filter-form-wrapper {
+  display: flex;
+  .full-width-input {
+    width: 100%;
+  }
+  .full-width-input:nth-child(1) {
+    margin-right: 4px;
+  }
+  .full-width-input:nth-child(2) {
+    margin-left: 4px;
+  }
+}
+

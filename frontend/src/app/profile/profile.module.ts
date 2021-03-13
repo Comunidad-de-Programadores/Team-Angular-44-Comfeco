@@ -10,9 +10,20 @@ import { MyProfileComponent } from './containers/my-profile/my-profile.component
 import { ProfileDetailsComponent } from './components/profile-details/profile-details.component';
 import { RegisteredEventsComponent } from './containers/registered-events/registered-events.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
+import { GroupComponent } from './components/group/group.component';
+import { GroupsComponent } from './containers/groups/groups.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [SubmoduleComponent, MyProfileComponent, ProfileDetailsComponent, RegisteredEventsComponent, EventDetailComponent],
-  imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule],
+  declarations: [
+    SubmoduleComponent,
+    MyProfileComponent,
+    ProfileDetailsComponent,
+    RegisteredEventsComponent,
+    EventDetailComponent,
+    GroupComponent,
+    GroupsComponent,
+  ],
+  imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule, ReactiveFormsModule],
 })
 export class ProfileModule {}
