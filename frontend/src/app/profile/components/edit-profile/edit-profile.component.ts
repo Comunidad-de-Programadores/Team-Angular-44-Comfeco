@@ -4,6 +4,7 @@ import { User } from '../../../core/models/user.model';
 import { EditProfileService } from '../../../core/services/edit-profile.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-edit-profile',
@@ -43,6 +44,7 @@ export class EditProfileComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes && changes.profile && !changes.profile.isFirstChange()) {
+      this.imgUrl = this.profile?.image;
       this.formPerfil.patchValue({
         email: this.profile.email || null,
         nickname: this.profile.nickname || null,
@@ -72,7 +74,7 @@ export class EditProfileComponent implements OnInit, OnChanges {
     });
   }
 
-  fileChangeEvent(event: Event): void {
+  async fileChangeEvent(event: Event) {
     const input = event.target as HTMLInputElement;
 
     if (!input.files?.length) {
@@ -86,7 +88,11 @@ export class EditProfileComponent implements OnInit, OnChanges {
     reader.onload = (_event) => {
       this.imgUrl = reader.result;
     };
-    console.log(file);
+
+    const task = this.authService.uploadProfileImage(file.name, file);
+    const obs = await task.snapshotChanges().toPromise();
+    const pathUrl = await obs.ref.getDownloadURL();
+    await this.authService.updateProfileImage(this.profile.id, pathUrl);
   }
 
   sendForm() {

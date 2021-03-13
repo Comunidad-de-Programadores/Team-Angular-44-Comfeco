@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from '../models/user.model';
 import { map } from 'rxjs/operators';
 import * as firebase from 'firebase/app';
+import { AngularFireStorage } from '@angular/fire/storage';
 import 'firebase/auth';
 
 @Injectable({
@@ -12,7 +13,11 @@ import 'firebase/auth';
 export class AuthService {
   usersRef: AngularFireObject<any>;
 
-  constructor(private firebaseAuth: AngularFireAuth, private firebaseDatabase: AngularFireDatabase) {}
+  constructor(
+    private firebaseAuth: AngularFireAuth,
+    private firebaseDatabase: AngularFireDatabase,
+    private storage: AngularFireStorage
+  ) {}
 
   signIn(email: string, password: string) {
     return this.firebaseAuth.signInWithEmailAndPassword(email, password);
@@ -32,6 +37,16 @@ export class AuthService {
     return this.firebaseDatabase.object(`users/${userId}`).update(user);
   }
 
+  uploadProfileImage(name: string, file: File) {
+    const filePath = `profiles/${name}`;
+    const task = this.storage.upload(filePath, file);
+    return task;
+  }
+
+  updateProfileImage(userId: string, imageProfile: string) {
+    return this.firebaseDatabase.object(`users/${userId}`).update({ image: imageProfile });
+  }
+
   recoverPassword(email: string) {
     return this.firebaseAuth.sendPasswordResetEmail(email);
   }
@@ -43,21 +58,6 @@ export class AuthService {
     newPassword: string,
     userId: string
   ) {
-    // let credential;
-    // const user = await this.firebaseAuth.currentUser;
-    // credential = await firebase.default.auth.EmailAuthProvider.credential(currentEmail, currentPassword);
-    // const userCredential = await user.reauthenticateWithCredential(credential);
-    // await userCredential.user.updatePassword(newPassword);
-    // if (userCredential.user.email !== newEmail) {
-    //   await userCredential.user.updateEmail(newEmail);
-    // }
-
-    // credential = await firebase.default.auth.EmailAuthProvider.credential(
-    //   userCredential.user.email !== newEmail ? currentEmail : newEmail,
-    //   newPassword
-    // );
-
-    // return await user.reauthenticateWithCredential(credential);
     const userCredential = await this.firebaseAuth.signInWithEmailAndPassword(currentEmail, currentPassword);
     await userCredential.user.updatePassword(newPassword);
     if (userCredential.user.email !== newEmail) {

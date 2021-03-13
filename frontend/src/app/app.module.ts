@@ -10,6 +10,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment';
 import { QuicklinkModule } from 'ngx-quicklink';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireDatabaseModule,
     QuicklinkModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     HttpClientModule,
   ],
   providers: [],
