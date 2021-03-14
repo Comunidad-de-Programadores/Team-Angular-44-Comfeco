@@ -1,0 +1,32 @@
+<div class="row mt-1">
+  <div class="col-xs-12">
+    Filtrar por:
+  </div>
+  <div class="col-xs-12">
+    <form [formGroup]="filterForm" (ngSubmit)="filterGroups()">
+      <div class="filter-form-wrapper">
+        <mat-form-field appearance="fill" class="full-width-input">
+          <mat-label>Selecciona un lenguaje</mat-label>
+          <mat-select formControlName="language">
+            <mat-option>Ninguno</mat-option>
+            <mat-option *ngFor="let language of languages" [value]="language">{{ language }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <mat-label>Grupo</mat-label>
+          <input matInput placeholder="Ej. Angular es vida" formControlName="groupName">
+        </mat-form-field>
+        <div>
+          <button mat-raised-button color="primary" type="submit">Filtrar</button>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</div>
+<div class="row" *ngIf="filteredGroups">
+  <div class="col-xs-12 col-md-4 mt-1" *ngFor="let group of filteredGroups">
+    <app-group [group]="group"></app-group>
+  </div>
+</div>

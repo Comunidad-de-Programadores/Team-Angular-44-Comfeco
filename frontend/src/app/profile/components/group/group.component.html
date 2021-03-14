@@ -1,0 +1,15 @@
+<mat-card>=
+  <img class="group-image" [src]="group.image" [alt]="group.name">
+  <mat-card-header>
+    <mat-card-title>
+      {{ group.name }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <span [class]="['language-badge']">{{ group.language }}</span>
+    <p>{{ group.description }}</p>
+  </mat-card-content>
+  <mat-card-actions class="text-center">
+    <button mat-raised-button color="accent" type="button">Unirse</button>
+  </mat-card-actions>
+</mat-card>
