@@ -7,7 +7,11 @@
             <mat-icon class="example-tab-icon">person</mat-icon>
             Mi perfi
           </ng-template>
-          <app-my-profile></app-my-profile>
+          <ng-template matTabContent>
+            <div class="tab-content">
+            <app-my-profile></app-my-profile>
+            </div>
+          </ng-template>
         </mat-tab>
 
         <mat-tab>
@@ -15,7 +19,11 @@
             <mat-icon class="example-tab-icon">verified</mat-icon>
             Insignias
           </ng-template>
-          Insignias contenido
+          <ng-template matTabContent>
+            <div class="tab-content">
+              <app-badges></app-badges>
+            </div>
+          </ng-template>
         </mat-tab>
 
         <mat-tab>
@@ -24,12 +32,17 @@
             Grupos
           </ng-template>
 
-          <div class="row">
-            <div class="col-xs-12 col-md-3"></div>
-            <div class="col-xs-12 col-md-9">
-              <app-groups></app-groups>
+          <ng-template matTabContent>
+            <div class="tab-content">
+             <div class="row">
+              <div class="col-xs-12 col-md-3"></div>
+              <div class="col-xs-12 col-md-9">
+                <app-groups></app-groups>
+              </div>
+             </div>
             </div>
-          </div>
+          </ng-template>
+
         </mat-tab>
 
         <mat-tab>
@@ -37,8 +50,11 @@
             <mat-icon class="example-tab-icon">event</mat-icon>
             Eventos
           </ng-template>
-
-          Eventos contenido
+          <ng-template matTabContent>
+            <div class="tab-content">
+              Eventos contenido
+            </div>
+          </ng-template>
         </mat-tab>
       </mat-tab-group>
     </div>
