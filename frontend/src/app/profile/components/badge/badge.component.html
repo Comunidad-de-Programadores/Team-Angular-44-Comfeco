@@ -1,0 +1,19 @@
+<mat-card>
+  <div class="text-center">
+    <img [src]="badge.image" [alt]="badge.name" class="badge-image">
+  </div>
+
+  <mat-card-header>
+    <mat-card-title>
+      {{ badge.name }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ badge.description }}</p>
+    <div class="badge-divider">
+      <hr>
+    </div>
+
+    <p>{{ badge.how_to_earn }}</p>
+  </mat-card-content>
+</mat-card>

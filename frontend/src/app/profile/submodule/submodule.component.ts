@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmoduleComponent implements OnInit {
   tabColor: string = 'primary';
+
   constructor() {}
 
   ngOnInit(): void {}
 
   selectedIndexChange(index: number) {
     switch (index) {
+      case 0:
+        this.tabColor = 'primary';
+        break;
       case 1:
         this.tabColor = 'accent';
         break;
@@ -20,7 +24,7 @@ export class SubmoduleComponent implements OnInit {
         this.tabColor = 'warn';
         break;
       case 3:
-        this.tabColor = 'grey';
+        this.tabColor = 'green';
         break;
 
       default:
