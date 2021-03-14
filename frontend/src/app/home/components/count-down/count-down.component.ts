@@ -49,11 +49,21 @@ export class CountDownComponent implements OnInit {
     this.counterValues.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     this.counterValues.seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const q = Math.abs(now - startDate);
-    const d = Math.abs(countDownDate - startDate);
-    const progressPercentage = Math.round((q / d) * 100);
+    if (this.counterValues.seconds < 0) {
+      this.counterValues.days = 0;
+      this.counterValues.hours = 0;
+      this.counterValues.minutes = 0;
+      this.counterValues.seconds = 0;
+      this.counterValues.progress = 100;
+    } else {
+      const q = Math.abs(now - startDate);
+      const d = Math.abs(countDownDate - startDate);
+      const progressPercentage = Math.round((q / d) * 100);
 
-    this.counterValues.progress = progressPercentage;
+      this.counterValues.progress = progressPercentage;
+    }
+
+
 
     this.counter$.pipe(map((counter) => this.counterValues));
   }
