@@ -1,0 +1,5 @@
+<div class="row mt-2" *ngIf="badges$ | async as badges">
+  <div class="col-xs-12 col-md-3" *ngFor="let badge of badges">
+    <app-badge [badge]="badge"></app-badge>
+  </div>
+</div>

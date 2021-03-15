@@ -18,6 +18,9 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { EditCredentialsComponent } from './components/edit-credentials/edit-credentials.component';
 import { MyGroupComponent } from './components/my-group/my-group.component';
+import { BadgesComponent } from './containers/badges/badges.component';
+import { BadgeComponent } from './components/badge/badge.component';
+
 
 
 @NgModule({
@@ -32,6 +35,8 @@ import { MyGroupComponent } from './components/my-group/my-group.component';
     EditProfileComponent,
     EditCredentialsComponent,
     MyGroupComponent,
+    BadgesComponent,
+    BadgeComponent,
   ],
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule, ReactiveFormsModule],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
