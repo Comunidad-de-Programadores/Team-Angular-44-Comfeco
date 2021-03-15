@@ -17,8 +17,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { EditCredentialsComponent } from './components/edit-credentials/edit-credentials.component';
+import { MyGroupComponent } from './components/my-group/my-group.component';
 import { BadgesComponent } from './containers/badges/badges.component';
 import { BadgeComponent } from './components/badge/badge.component';
+
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { BadgeComponent } from './components/badge/badge.component';
     GroupsComponent,
     EditProfileComponent,
     EditCredentialsComponent,
+    MyGroupComponent,
     BadgesComponent,
     BadgeComponent,
   ],
