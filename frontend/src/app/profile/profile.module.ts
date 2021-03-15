@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { EditCredentialsComponent } from './components/edit-credentials/edit-credentials.component';
+import { MyGroupComponent } from './components/my-group/my-group.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { EditCredentialsComponent } from './components/edit-credentials/edit-cre
     GroupsComponent,
     EditProfileComponent,
     EditCredentialsComponent,
+    MyGroupComponent,
   ],
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule, ReactiveFormsModule],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
