@@ -77,8 +77,15 @@ export class AuthService {
     return this.firebaseAuth.authState;
   }
 
+  isLogged() {
+    return this.getAuthState().pipe(
+      map(user => user !== null),
+    );
+  }
+
   getCurrentUser(userID: string) {
     this.usersRef = this.firebaseDatabase.object(`users/${userID}`);
+
     return this.usersRef.snapshotChanges().pipe(
       map((snapshot) => {
         return { ...snapshot.payload.val(), id: snapshot.key };

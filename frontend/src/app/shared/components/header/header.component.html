@@ -9,26 +9,28 @@
             <a mat-button aria-label="Comunidades" class="nav-link" routerLinkActive="active" [routerLink]="['/comunities']">
         Comunidades
       </a>
-            <a mat-button aria-label="Talleres" class="nav-link" routerLinkActive="active" [routerLink]="['/workshops']">
+            <button mat-button aria-label="Talleres" class="nav-link">
         Talleres
-      </a>
-            <a mat-button aria-label="Creadores de contenido" class="nav-link" routerLinkActive="active" [routerLink]="['/content-creators']">
+      </button>
+            <button mat-button aria-label="Creadores de contenido" class="nav-link">
         Creadores de contenido
-      </a>
+      </button>
         </div>
         <div>
             <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>notifications</mat-icon>
       </button>
-            <a mat-button class="nav-link" *ngIf="isRecoverPasswordPath()" aria-label="Iniciar Sesion" [routerLink]="['/auth/sign-in']">Iniciar Sesión</a
+            <a mat-button class="nav-link" *ngIf="isRecoverPasswordPath() || !isLogged else loggedMenu" aria-label="Iniciar Sesion" [routerLink]="['/auth/sign-in']">Iniciar Sesión</a
       >
-      <button mat-button [matMenuTriggerFor]="menu">
-        <img src="assets/images/profile.png" class="profile-img" alt="Comfeco Logo" /> Nickname
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/profile">Mi perfil</button>
-        <button mat-menu-item>Cerrar Sesión</button>
-      </mat-menu>
+      <ng-template #loggedMenu>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <img [src]="currentUser.image != null? currentUser.image : 'assets/images/profile.png'" class="profile-img" alt="Imagen de perfil" /> <span *ngIf="currentUser.nickname">{{ currentUser.nickname }}</span>
+        </button>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item routerLink="/profile">Mi perfil</a>
+          <button mat-menu-item (click)="logOut()">Cerrar Sesión</button>
+        </mat-menu>
+      </ng-template>
     </div>
   </mat-toolbar-row>
   <mat-toolbar-row class="small-menu">

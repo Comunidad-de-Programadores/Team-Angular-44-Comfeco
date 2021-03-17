@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { QuicklinkStrategy } from 'ngx-quicklink';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
       {
         path: 'profile',
         loadChildren: () => import('./profile/profile.module').then((m) => m.ProfileModule),
+        canActivate: [AuthGuard]
       },
       {
         path: 'auth',

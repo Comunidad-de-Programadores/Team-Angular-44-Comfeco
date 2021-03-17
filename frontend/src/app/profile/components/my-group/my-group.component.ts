@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from '../../../core/models/team';
+import { Team } from '../../../core/models/team.model';
 
 @Component({
   selector: 'app-my-group',

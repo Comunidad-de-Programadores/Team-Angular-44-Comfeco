@@ -1,7 +1,7 @@
 <mat-card class="events-card">
   <mat-card-title class="title">
     <p>Eventos de tu interes</p>
-    <a mat-button color="primary">Ver más</a>
+    <button mat-button color="primary">Ver más</button>
   </mat-card-title>
   <mat-card-content>
     <app-event-detail [event]="event" *ngFor="let event of events"> </app-event-detail>
