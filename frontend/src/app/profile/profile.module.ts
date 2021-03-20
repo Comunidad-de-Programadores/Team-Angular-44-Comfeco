@@ -20,6 +20,7 @@ import { EditCredentialsComponent } from './components/edit-credentials/edit-cre
 import { MyGroupComponent } from './components/my-group/my-group.component';
 import { BadgesComponent } from './containers/badges/badges.component';
 import { BadgeComponent } from './components/badge/badge.component';
+import { MyBadgesComponent } from './components/my-badges/my-badges.component';
 
 
 
@@ -37,6 +38,7 @@ import { BadgeComponent } from './components/badge/badge.component';
     MyGroupComponent,
     BadgesComponent,
     BadgeComponent,
+    MyBadgesComponent,
   ],
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule, ReactiveFormsModule],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],

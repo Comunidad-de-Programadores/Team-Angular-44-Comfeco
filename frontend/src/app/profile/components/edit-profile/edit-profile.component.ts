@@ -4,7 +4,7 @@ import { User } from '../../../core/models/user.model';
 import { EditProfileService } from '../../../core/services/edit-profile.service';
 import { AuthService } from '../../../core/services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { finalize } from 'rxjs/operators';
+import { Badge } from 'src/app/core/models/badge.model';
 
 @Component({
   selector: 'app-edit-profile',
@@ -14,6 +14,8 @@ import { finalize } from 'rxjs/operators';
 export class EditProfileComponent implements OnInit, OnChanges {
   @Output() hideEditProfile = new EventEmitter<boolean>();
   @Input() profile: User;
+  @Input() badges: Badge[];
+  @Input() professions: { id: number; text: string }[];
   hidePassword: boolean;
   hideConfirmPassword: boolean;
   genders: { id: number; text: string }[];
@@ -21,6 +23,7 @@ export class EditProfileComponent implements OnInit, OnChanges {
   formPerfil: FormGroup;
   imgUrl: string | ArrayBuffer;
   date = new Date();
+  isFormSend: boolean;
   constructor(
     private fb: FormBuilder,
     private editProfileService: EditProfileService,
@@ -35,6 +38,7 @@ export class EditProfileComponent implements OnInit, OnChanges {
       { id: 2, text: 'Femenino' },
     ];
     this.countries = [];
+    this.isFormSend = false;
   }
 
   ngOnInit(): void {
@@ -43,10 +47,11 @@ export class EditProfileComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes && changes.profile && !changes.profile.isFirstChange()) {
+    if (this.formPerfil && this.profile) {
       this.imgUrl = this.profile?.image;
       this.formPerfil.patchValue({
         email: this.profile.email || null,
+        profession: this.profile.profession,
         nickname: this.profile.nickname || null,
         birthday: new Date(this.profile.birthday || this.date),
         gender: this.profile.gender || null,
@@ -57,12 +62,67 @@ export class EditProfileComponent implements OnInit, OnChanges {
         twitter: this.profile.twitter || null,
         bio: this.profile.bio || null,
       });
+
+      this.validateSocialBadge();
+    }
+  }
+
+  validateSocialBadge() {
+    if (this.isFormSend) {
+      let isDataUsercomplete: boolean = true;
+      const {
+        id,
+        profession,
+        bio,
+        birthday,
+        country,
+        email,
+        gender,
+        image,
+        nickname,
+        badges,
+        github,
+        linkedin,
+        twitter,
+        facebook,
+      } = this.profile;
+
+      const user = new User(
+        id,
+        image,
+        nickname,
+        email,
+        profession,
+        bio,
+        gender,
+        birthday,
+        country,
+        badges,
+        github,
+        linkedin,
+        twitter,
+        facebook
+      );
+      for (const key in user) {
+        const element = user[key];
+        if (!element) {
+          isDataUsercomplete = false;
+          break;
+        }
+      }
+      const social = this.badges && this.badges.find((badge) => badge.name.toLowerCase() === 'social');
+      const userHasSocialBadge = user.badges.find((badge) => badge.name.toLowerCase() === 'social');
+
+      if (!userHasSocialBadge && isDataUsercomplete) {
+        this.authService.updateSocialBadge(user.badges, social, this.profile.id).then(console.log).catch(console.log);
+      }
     }
   }
 
   initForm(): void {
     this.formPerfil = this.fb.group({
       nickname: [null, Validators.required],
+      profession: [null, Validators.required],
       gender: [null, Validators.required],
       birthday: [null, Validators.required],
       country: [null, Validators.required],
@@ -96,15 +156,16 @@ export class EditProfileComponent implements OnInit, OnChanges {
   }
 
   sendForm() {
+    this.isFormSend = true;
     this.authService
       .updateUser(this.formPerfil.value, this.profile.id)
-      .then((result) => {
+      .then((_) => {
         this.snackbar
           .open('Perfil actualizado exitosamente', 'Cerrar', {
             duration: 4000,
           })
           .onAction()
-          .subscribe(() => {
+          .subscribe((res) => {
             this.hideEditProfile.emit(false);
           });
       })

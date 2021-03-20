@@ -1,0 +1,10 @@
+<mat-card>
+  <div class="preview-badges">
+    <div class="badge__item" *ngFor="let badge of profile.badges">
+      <picture>
+        <img [src]="badge.image" height="100" [alt]="badge.name" />
+      </picture>
+      <b>{{ badge.name }}</b>
+    </div>
+  </div>
+</mat-card>
