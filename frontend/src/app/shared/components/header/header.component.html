@@ -24,7 +24,7 @@
       >
       <ng-template #loggedMenu>
         <button mat-button [matMenuTriggerFor]="menu">
-          <img [src]="currentUser.image != null? currentUser.image : 'assets/images/profile.png'" class="profile-img" alt="Imagen de perfil" /> <span *ngIf="currentUser.nickname">{{ currentUser.nickname }}</span>
+          <img [src]="currentUser?.image != null? currentUser.image : 'assets/images/profile.png'" class="profile-img" alt="Imagen de perfil" /> <span *ngIf="currentUser?.nickname">{{ currentUser.nickname }}</span>
         </button>
         <mat-menu #menu="matMenu">
           <a mat-menu-item routerLink="/profile">Mi perfil</a>
