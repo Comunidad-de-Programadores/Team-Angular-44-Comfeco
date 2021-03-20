@@ -1,5 +1,6 @@
 <div id="staticCarousel" class="content">
   <ngx-slick-carousel
+    *ngIf="slides"
     class="carousel"
     #slickModal="slick-carousel"
     [config]="slideConfig"
@@ -10,7 +11,7 @@
   >
     <div ngxSlickItem *ngFor="let slide of slides" class="slide">
       <figure>
-        <img [src]="slide.img" />
+        <img [src]="slide.image" />
       </figure>
     </div>
   </ngx-slick-carousel>

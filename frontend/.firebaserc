@@ -1,11 +1,5 @@
 {
-  "targets": {
-    "team-angular-44-comfeco": {
-      "hosting": {
-        "frontend": [
-          "team-angular-44-comfeco"
-        ]
-      }
-    }
+  "projects": {
+    "default": "team-angular-44-comfeco"
   }
 }

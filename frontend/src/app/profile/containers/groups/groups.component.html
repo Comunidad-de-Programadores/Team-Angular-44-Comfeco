@@ -4,19 +4,23 @@
   </div>
   <div class="col-xs-12">
     <form [formGroup]="filterForm" (ngSubmit)="filterGroups()">
-      <div class="filter-form-wrapper">
-        <mat-form-field appearance="fill" class="full-width-input">
-          <mat-label>Selecciona un lenguaje</mat-label>
-          <mat-select formControlName="language">
-            <mat-option>Ninguno</mat-option>
-            <mat-option *ngFor="let language of languages" [value]="language">{{ language }}</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field class="full-width-input">
-          <mat-label>Grupo</mat-label>
-          <input matInput placeholder="Ej. Angular es vida" formControlName="groupName">
-        </mat-form-field>
-        <div>
+      <div class="filter-form-wrapper row">
+        <div class="col-xs-12 col-md-4">
+          <mat-form-field appearance="fill" class="full-width-input">
+            <mat-label>Selecciona un lenguaje</mat-label>
+            <mat-select formControlName="language">
+              <mat-option>Ninguno</mat-option>
+              <mat-option *ngFor="let language of languages" [value]="language">{{ language }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-xs-12 col-md-5">
+          <mat-form-field class="full-width-input">
+            <mat-label>Grupo</mat-label>
+            <input matInput placeholder="Ej. Angular es vida" formControlName="groupName">
+          </mat-form-field>
+        </div>
+        <div class="col-xs-12 col-md-3">
           <button mat-raised-button color="primary" type="submit">Filtrar</button>
         </div>
 

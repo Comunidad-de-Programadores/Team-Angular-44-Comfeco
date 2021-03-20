@@ -1,0 +1,26 @@
+.group-member{
+  //background-color: royalblue;
+  align-items: center;
+  border-bottom: 1px solid rgba($color: #5E35B1, $alpha: 0.3);
+  padding: 5px 0;
+
+  img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  }
+  .col-nickname{
+      padding: 0 15px;
+      h4{
+          margin: 0;
+      }
+      span{
+          font-size: .85em;
+          opacity: .5;
+      }
+  }
+  p{
+      color: #5E35B1;
+      margin: 0;
+  }
+}

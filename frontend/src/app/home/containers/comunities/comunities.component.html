@@ -3,7 +3,7 @@
     <h3>Comunidades</h3>
     <a href="/comunities">Ver más</a>
   </section>
-  <app-item-communities></app-item-communities>
-  <app-item-communities></app-item-communities>
-  <app-item-communities></app-item-communities>
+  <ng-container *ngIf="comunities$ | async as comunities">
+    <app-item-communities *ngFor="let comunity of comunities" [comunity]="comunity"></app-item-communities>
+  </ng-container>
 </mat-card>

@@ -8,7 +8,6 @@ import { MaterialModule } from '../material/material.module';
 import { CoreModule } from '../core/core.module';
 import { MyProfileComponent } from './containers/my-profile/my-profile.component';
 import { ProfileDetailsComponent } from './components/profile-details/profile-details.component';
-import { RegisteredEventsComponent } from './containers/registered-events/registered-events.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
 
 import { GroupComponent } from './components/group/group.component';
@@ -21,6 +20,10 @@ import { MyGroupComponent } from './components/my-group/my-group.component';
 import { BadgesComponent } from './containers/badges/badges.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { MyBadgesComponent } from './components/my-badges/my-badges.component';
+import { InterestEventsComponent } from './containers/interest-events/interest-events.component';
+import { RecentActivityComponent } from './containers/recent-activity/recent-activity.component';
+import { RecentActivityItemComponent } from './components/recent-activity-item/recent-activity-item.component';
+import { GroupMemberComponent } from './components/group-member/group-member.component';
 
 
 
@@ -29,7 +32,7 @@ import { MyBadgesComponent } from './components/my-badges/my-badges.component';
     SubmoduleComponent,
     MyProfileComponent,
     ProfileDetailsComponent,
-    RegisteredEventsComponent,
+    InterestEventsComponent,
     EventDetailComponent,
     GroupComponent,
     GroupsComponent,
@@ -39,6 +42,9 @@ import { MyBadgesComponent } from './components/my-badges/my-badges.component';
     BadgesComponent,
     BadgeComponent,
     MyBadgesComponent,
+    RecentActivityComponent,
+    RecentActivityItemComponent,
+    GroupMemberComponent
   ],
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule, ReactiveFormsModule],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],

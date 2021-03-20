@@ -1,20 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Sponsor } from 'src/app/core/models/sponsor.model';
+import { HomeService } from 'src/app/core/services/home.service';
 
 @Component({
   selector: 'app-automatic-carousel',
   templateUrl: './automatic-carousel.component.html',
   styleUrls: ['./automatic-carousel.component.scss'],
 })
-export class AutomaticCarouselComponent implements OnInit {
-  slides = [
-    { img: 'assets/images/home/carousel/bezael.jpg' },
-    { img: 'assets/images/home/carousel/fernando.jpg' },
-    { img: 'assets/images/home/carousel/fernando.jpg' },
-    { img: 'assets/images/home/carousel/fernando.jpg' },
-    { img: 'assets/images/home/carousel/fernando.jpg' },
-    { img: 'assets/images/home/carousel/sacha.jpg' },
-    { img: 'assets/images/home/carousel/bezael.jpg' },
-  ];
+export class AutomaticCarouselComponent implements OnInit, OnDestroy {
+  leadersSubscription: Subscription;
+  slides: [Sponsor];
+
   slideConfig = {
     arrows: true,
     dots: true,
@@ -49,16 +46,20 @@ export class AutomaticCarouselComponent implements OnInit {
       },
     ],
   };
-  constructor() {}
+  constructor(private homeService: HomeService) {}
 
-  ngOnInit(): void {}
-
-  addSlide() {
-    this.slides.push({ img: 'http://placehold.it/350x150/777777' });
+  ngOnInit(): void {
+    this.getLeaders();
   }
 
-  removeSlide() {
-    this.slides.length = this.slides.length - 1;
+  ngOnDestroy(): void {
+    this.leadersSubscription.unsubscribe();
+  }
+
+  getLeaders() {
+    this.leadersSubscription = this.homeService.getTeamLeaders().subscribe((leaders) => {
+      this.slides = leaders;
+    });
   }
 
   slickInit(e) {

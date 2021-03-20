@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Comunity } from 'src/app/core/models/comunity.model';
 
 @Component({
   selector: 'app-item-communities',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-communities.component.scss']
 })
 export class ItemCommunitiesComponent implements OnInit {
+  @Input() comunity: Comunity;
 
   constructor() { }
 

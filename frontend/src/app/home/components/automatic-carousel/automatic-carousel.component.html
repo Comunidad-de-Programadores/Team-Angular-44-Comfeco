@@ -1,6 +1,7 @@
 <ngx-slick-carousel
   class="carousel"
   #slickModal="slick-carousel"
+  *ngIf="slides"
   [config]="slideConfig"
   (init)="slickInit($event)"
   (breakpoint)="breakpoint($event)"
@@ -8,6 +9,6 @@
   (beforeChange)="beforeChange($event)"
 >
   <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-    <img [src]="slide.img" alt="180" width="180" />
+    <img [src]="slide.image" alt="180" width="180" />
   </div>
 </ngx-slick-carousel>
