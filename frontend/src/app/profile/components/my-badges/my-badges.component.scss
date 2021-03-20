@@ -1,0 +1,38 @@
+mat-card {
+  margin: 16px auto;
+
+  .title-card {
+    margin-bottom: 20px;
+    p {
+      font-size: 0.7em;
+      margin: 0;
+    }
+  }
+}
+
+.preview-badges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  @media only screen and (max-width: 550px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .badge__item {
+    text-align: center;
+
+    picture {
+      display: block;
+      margin-bottom: 10px;
+      img {
+        vertical-align: bottom;
+        height: 100px;
+      }
+    }
+  }
+}

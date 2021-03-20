@@ -1,21 +1,28 @@
 <div class="wrapper">
-  <div class="row">
+  <div class="row" *ngIf="profileData$ | async as profile">
     <ng-container *ngIf="!showProfile">
       <div class="col-xs-12 col-md-3">
         <app-profile-details
-          *ngIf="profileData$ | async as profile"
           [profile]="profile"
+          [professions]="professions"
           (changeVisibilityProfile)="showProfile = $event"
         ></app-profile-details>
       </div>
-      <div class="col-xs-12 col-md-6"></div>
+      <div class="col-xs-12 col-md-6">
+        <app-my-badges [profile]="profile"></app-my-badges>
+      </div>
       <div class="col-xs-12 col-md-3">
         <app-registered-events></app-registered-events>
       </div>
     </ng-container>
     <ng-container *ngIf="showProfile">
       <div class="col-xs-12 col-md-12">
-        <app-edit-profile [profile]="profileData$ | async" (hideEditProfile)="showProfile = $event"></app-edit-profile>
+        <app-edit-profile
+          [profile]="profile"
+          [badges]="badges$ | async"
+          [professions]="professions"
+          (hideEditProfile)="showProfile = $event"
+        ></app-edit-profile>
       </div>
     </ng-container>
   </div>

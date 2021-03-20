@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import * as firebase from 'firebase/app';
 import { AngularFireStorage } from '@angular/fire/storage';
 import 'firebase/auth';
+import { Badge } from 'src/app/core/models/badge.model';
 
 @Injectable({
   providedIn: 'root',
@@ -35,6 +36,10 @@ export class AuthService {
 
   updateUser(user: User, userId: string) {
     return this.firebaseDatabase.object(`users/${userId}`).update(user);
+  }
+
+  updateSocialBadge(badges: Badge[], socialBadge: Badge, userId: string) {
+    return this.firebaseDatabase.object(`users/${userId}`).update({ badges: [...badges, socialBadge] });
   }
 
   uploadProfileImage(name: string, file: File) {
@@ -78,9 +83,7 @@ export class AuthService {
   }
 
   isLogged() {
-    return this.getAuthState().pipe(
-      map(user => user !== null),
-    );
+    return this.getAuthState().pipe(map((user) => user !== null));
   }
 
   getCurrentUser(userID: string) {
