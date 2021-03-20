@@ -2,13 +2,13 @@
   <mat-card-content>
     <div class="row">
       <div class="col-xs-12 text-center">
-        <img [src]="event.img" alt="" />
+        <img [src]="event.image" alt="" />
       </div>
       <div class="col-xs-12 text-center">
         <p>{{ event.name }}</p>
       </div>
       <div class="col-xs-12 text-center">
-        <button mat-stroked-button color="primary">Más información</button>
+        <a mat-stroked-button color="primary" routerLink="/coming-soon">Más información</a>
       </div>
     </div>
   </mat-card-content>

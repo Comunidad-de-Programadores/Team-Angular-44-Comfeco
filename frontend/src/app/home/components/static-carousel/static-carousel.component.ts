@@ -1,85 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Sponsor } from 'src/app/core/models/sponsor.model';
+import { HomeService } from 'src/app/core/services/home.service';
 
 @Component({
   selector: 'app-static-carousel',
   templateUrl: './static-carousel.component.html',
   styleUrls: ['./static-carousel.component.scss'],
 })
-export class StaticCarouselComponent implements OnInit {
-  slides = [
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/javascript.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/react-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/angular.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-    {
-      img: 'assets/images/home/carousel/technologies/vue-js.svg',
-    },
-  ];
+export class StaticCarouselComponent implements OnInit, OnDestroy {
+  sponsorsSubscription: Subscription;
+  slides: [Sponsor];
   slideConfig = {
     arrows: true,
     dots: true,
@@ -126,11 +57,20 @@ export class StaticCarouselComponent implements OnInit {
     ],
   };
 
-  constructor() {}
+  constructor(private homeService: HomeService) {}
 
   ngOnInit(): void {
+    this.getSponsors();
+  }
 
-     
+  ngOnDestroy(): void {
+    this.sponsorsSubscription.unsubscribe();
+  }
+
+  getSponsors() {
+    this.sponsorsSubscription = this.homeService.getSponsors().subscribe((sponsors) => {
+      this.slides = sponsors;
+    });
   }
 
   addSlide() {

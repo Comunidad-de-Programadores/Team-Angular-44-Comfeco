@@ -1,0 +1,7 @@
+<section>
+  <b>Actividad reciente</b>
+  <ng-container *ngIf="recentActivity$ | async as recentActivity">
+    <app-recent-activity-item *ngFor="let notification of recentActivity" [notification]="notification"></app-recent-activity-item>
+  </ng-container>
+
+</section>

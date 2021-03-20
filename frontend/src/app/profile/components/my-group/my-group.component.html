@@ -1,11 +1,11 @@
-<mat-card>
+<mat-card *ngIf="team$ | async as team">
     <mat-card-title>
         <div class="row group-head">
             <div class="col-md-6">
                 <p>Mi Grupo</p>
             </div>
             <div class="col-btn col-md-6">
-                <button mat-button color="primary">Ver más</button>
+                <a mat-button color="primary" routerLink="/coming-soon">Ver más</a>
             </div>
         </div>
 
@@ -21,27 +21,16 @@
 
     <mat-card-content>
         <ng-container *ngFor="let member of team.members">
-            <div class="row group-member">
-                <div class="col-md-2">
-                    <img [src]="member.image" [alt]="member.nickName">
-                </div>
-                <div class="col-nickname col-md-6">
-                    <h4>{{member.nickName}}</h4>
-                    <span>{{member.level}}</span>
-                </div>
-                <div class="col-md-4">
-                    <p>{{member.rank}}</p>
-                </div>
-            </div>
+            <app-group-member [member]="member"></app-group-member>
         </ng-container>
     </mat-card-content>
     <mat-card-actions>
         <div class="row">
             <div class="col col-md-6">
-                <button mat-flat-button color="warn">Abandonar</button>
+                <a mat-flat-button color="warn" routerLink="/coming-soon">Abandonar</a>
             </div>
             <div class="col col-md-6">
-                <button mat-flat-button color="primary">Ir al chat</button>
+                <a mat-flat-button color="primary"routerLink="/coming-soon">Ir al chat</a>
             </div>
         </div>
     </mat-card-actions>

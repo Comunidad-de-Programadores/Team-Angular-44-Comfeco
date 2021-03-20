@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisteredEventsComponent } from './registered-events.component';
+import { RecentActivityItemComponent } from './recent-activity-item.component';
 
-describe('RegisteredEventsComponent', () => {
-  let component: RegisteredEventsComponent;
-  let fixture: ComponentFixture<RegisteredEventsComponent>;
+describe('RecentActivityItemComponent', () => {
+  let component: RecentActivityItemComponent;
+  let fixture: ComponentFixture<RecentActivityItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisteredEventsComponent ]
+      declarations: [ RecentActivityItemComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisteredEventsComponent);
+    fixture = TestBed.createComponent(RecentActivityItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

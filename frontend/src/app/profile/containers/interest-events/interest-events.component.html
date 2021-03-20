@@ -1,0 +1,11 @@
+<mat-card class="events-card">
+  <mat-card-title class="title">
+    <p>Eventos de tu interes</p>
+    <a mat-button color="primary" routerLink="/coming-soon">Ver más</a>
+  </mat-card-title>
+  <mat-card-content>
+    <ng-container *ngIf="events$ | async as events">
+      <app-event-detail *ngFor="let event of events" [event]="event"></app-event-detail>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

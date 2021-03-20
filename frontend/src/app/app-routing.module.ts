@@ -35,6 +35,10 @@ const routes: Routes = [
         path: 'policy',
         loadChildren: () => import('./policy/policy.module').then((m) => m.PolicyModule),
       },
+      {
+        path: 'coming-soon',
+        loadChildren: () => import('./coming-soon/coming-soon.module').then((m) => m.ComingSoonModule),
+      },
     ],
   },
 ];
