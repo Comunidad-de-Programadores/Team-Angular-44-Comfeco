@@ -11,10 +11,10 @@
       <div class="col-xs-12 text-center">
         <p>{{ profile.nickname }}</p>
       </div>
-      <div class="col-xs-12 text-center" *ngIf="profile.profession">
-        <p>{{ profile.profession }}</p>
+      <div class="col-xs-12 text-center" *ngIf="profession">
+        <p>{{ profession }}</p>
       </div>
-      <div class="col-xs-12" *ngIf="profile.bio">
+      <div class="col-xs-12 text-center" *ngIf="profile.bio">
         <p>{{ profile.bio }}</p>
       </div>
     </div>
