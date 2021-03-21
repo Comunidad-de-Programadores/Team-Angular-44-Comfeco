@@ -1,0 +1,5 @@
+<div *ngIf="events$ | async as events" class="row">
+  <div *ngFor="let event of events" class="col-xs-12 col-md-4 mt-1">
+    <app-event-item [event]="event" (subscribeEvent)="subscribeEvent($event)"></app-event-item>
+  </div>
+</div>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
-import { SubmoduleComponent } from './submodule/submodule.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 import { CoreModule } from '../core/core.module';
@@ -20,16 +19,20 @@ import { MyGroupComponent } from './components/my-group/my-group.component';
 import { BadgesComponent } from './containers/badges/badges.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { MyBadgesComponent } from './components/my-badges/my-badges.component';
-import { InterestEventsComponent } from './containers/interest-events/interest-events.component';
 import { RecentActivityComponent } from './containers/recent-activity/recent-activity.component';
 import { RecentActivityItemComponent } from './components/recent-activity-item/recent-activity-item.component';
+import { EventsComponent } from './containers/events/events.component';
+import { EventItemComponent } from './components/event-item/event-item.component';
+import { ProfileComponent } from './profile.component';
+import { InterestEventsComponent } from './containers/interest-events/interest-events.component';
 import { GroupMemberComponent } from './components/group-member/group-member.component';
+import { EventDetailsModalComponent } from './components/event-details-modal/event-details-modal.component';
 
 
 
 @NgModule({
   declarations: [
-    SubmoduleComponent,
+    ProfileComponent,
     MyProfileComponent,
     ProfileDetailsComponent,
     InterestEventsComponent,
@@ -44,7 +47,10 @@ import { GroupMemberComponent } from './components/group-member/group-member.com
     MyBadgesComponent,
     RecentActivityComponent,
     RecentActivityItemComponent,
-    GroupMemberComponent
+    GroupMemberComponent,
+    EventsComponent,
+    EventItemComponent,
+    EventDetailsModalComponent
   ],
   imports: [CommonModule, ProfileRoutingModule, MaterialModule, CoreModule, SharedModule, ReactiveFormsModule],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
