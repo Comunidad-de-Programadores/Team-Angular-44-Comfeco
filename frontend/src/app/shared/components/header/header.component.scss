@@ -27,6 +27,12 @@ mat-toolbar {
 
     .nav-movile-link {
       width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      font-size: 0.5em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .nav-movile-link.active,
     .nav-link.active {
@@ -38,6 +44,15 @@ mat-toolbar {
 
 .large-menu {
   display: none;
+}
+@media screen and (min-width: 320px) {
+  mat-toolbar {
+    mat-toolbar-row {
+      .nav-movile-link {
+        font-size: 0.55em;
+      }
+    }
+  }
 }
 @media screen and (min-width: 992px) {
   .small-menu {
