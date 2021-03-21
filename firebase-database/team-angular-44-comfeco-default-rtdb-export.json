@@ -1,0 +1,304 @@
+{
+  "badges" : {
+    "-dasjkdasdmask" : {
+      "description" : "Tu primera insignia",
+      "how_to_earn" : "Completa todos los datos de tu perfil",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/badges%2Ficonfinder__christmas_badge_1679534.png?alt=media",
+      "name" : "Social"
+    },
+    "-dsahjbkuasijn" : {
+      "description" : "Eres un crack",
+      "how_to_earn" : "Crea un nuevo framework",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/badges%2Ficonfinder_badge_3688520.png?alt=media",
+      "name" : "Crack"
+    },
+    "-hdhashjsdakh" : {
+      "description" : "Cielos, que macizo",
+      "how_to_earn" : "Desarrolla tu SO con C, tú solo desde 0",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/badges%2Ficonfinder_23_Page_Rank_Badge_1688850.png?alt=media",
+      "name" : "Macizo"
+    },
+    "-hdjahskbdjsab" : {
+      "description" : "La insignia de los desarrolladores más lokos",
+      "how_to_earn" : "Desarrolla un clon de Facebook 100% en PHP, sin frameworks frontend ni backend. Todo con PHP y AJAX",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/badges%2Ficonfinder_97_Badge_Reward_Medal_Favorite_Star_2142680.png?alt=media",
+      "name" : "Huevos de oro"
+    }
+  },
+  "comunities" : {
+    "-dasdnkasba" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/comunities%2Ficonfinder_34_Custom_Coding_1688841.png?alt=media",
+      "name" : "Comunidad de suscriptores"
+    },
+    "-jdakshdassad" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/comunities%2Ficonfinder_576_Api_app_coding_developer_laptop_game_gaming_genres_programing_4158593.png?alt=media",
+      "name" : "Comunidad de desarrolladores"
+    },
+    "-njdsajdgasjh" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/comunities%2Ficonfinder_developer-mode_326546.png?alt=media",
+      "name" : "Comunidad de programadores"
+    }
+  },
+  "count-down-event" : {
+    "endDateTime" : 1614556800000,
+    "name" : "Etapa 3",
+    "startDateTime" : 1613865600000
+  },
+  "events" : {
+    "-dhajskhdsa" : {
+      "description" : "Evento de código para adolecentes",
+      "details" : "El evento se dará...",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/events%2Fpexels-olia-danilevich-4974920%20(1).jpg?alt=media",
+      "name" : "Teens Code"
+    },
+    "-dnjasdsjdjaks" : {
+      "description" : "Evento de desarrollo",
+      "details" : "Detalles del evento de desarrollo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/events%2Fpexels-sora-shimazaki-5935794.jpg?alt=media",
+      "name" : "Evento"
+    }
+  },
+  "groups" : {
+    "-dhdjksahdhas" : {
+      "description" : "El mejor grupo porque representamos el mejor framework frontent. Angular.",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-hitesh-choudhary-879109.jpg?alt=media",
+      "language" : "Typescript",
+      "name" : "Angular is love"
+    },
+    "-hdaksjsdas" : {
+      "description" : "Descripcioooooon",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-antonio-batinic%CC%81-4164418.jpg?alt=media",
+      "language" : "JavaScript",
+      "name" : "Reacteros"
+    },
+    "-jdashd" : {
+      "description" : "Esta es una comunidad de fortran",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-markus-spiske-177598.jpg?alt=media",
+      "language" : "Fortran",
+      "name" : "Viejos lesvianos"
+    },
+    "-nzjnajdjas" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    },
+    "-xadaskd" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    },
+    "-xasndjksnd" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    },
+    "-xzcsadasdsa" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    },
+    "-xzsdnasdkdsa" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    },
+    "-xzxdasdxsaddasj" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    },
+    "-zadasdsaj" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    },
+    "-zcxnjsddasd" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    },
+    "-zxczcwfjasds" : {
+      "description" : "Somos inges",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/groups%2Fpexels-eduardo-rosas-907489.jpg?alt=media",
+      "language" : "C#",
+      "name" : "Los inges"
+    }
+  },
+  "interest-events" : {
+    "-hjdasjksdjdask" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/interest-events%2Flogo.png?alt=media",
+      "name" : "Community Fest And Code"
+    },
+    "-njdasnjdaksklas" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/interest-events%2FScreen%20Shot%202021-01-24%20at%205.52.04%20p.m..png?alt=media",
+      "name" : "Type Racer"
+    }
+  },
+  "my-group" : {
+    "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/my-team%2F13691885491579517854-128.png?alt=media",
+    "language" : "Javascript",
+    "members" : {
+      "-danjsnd" : {
+        "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/my-team%2Fpexels-sound-on-3756985.jpg?alt=media",
+        "level" : "Novato",
+        "nickName" : "JCruz",
+        "rank" : "Integrante"
+      },
+      "-dasndkasdsaa" : {
+        "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/my-team%2Fpexels-samad-ismayilov-804009.jpg?alt=media",
+        "level" : "Apenas aprendiendo",
+        "nickName" : "Fede",
+        "rank" : "Integrante"
+      },
+      "-djasdskadl" : {
+        "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/my-team%2Fpexels-hakim-santoso-2805050.jpg?alt=media",
+        "level" : "Medio",
+        "nickName" : "JuanJo",
+        "rank" : "Integrante"
+      },
+      "-dndasdksajhd" : {
+        "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/my-team%2Fpexels-bruno-salvadori-2269872.jpg?alt=media",
+        "level" : "Avanzado",
+        "nickName" : "LuisLiraC",
+        "rank" : "Líder"
+      },
+      "-ndasjndasjn" : {
+        "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/my-team%2Fpexels-elijah-o'donnell-3473525.jpg?alt=media",
+        "level" : "Novato",
+        "nickName" : "JuanSecu",
+        "rank" : "Integrante"
+      }
+    },
+    "name" : "Crazy Techs"
+  },
+  "recent-activity" : {
+    "-dasdsakjhs" : {
+      "title" : "Primera actividad"
+    },
+    "-nmdnamsnd" : {
+      "title" : "Segunda actividad"
+    }
+  },
+  "sponsors" : {
+    "-dhasjjhdan" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/sponsors%2Fsponsor-huawei.webp?alt=media",
+      "name" : "Huawei"
+    },
+    "-dnasdksd-as" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/sponsors%2Fsponsor-codigofacilito.webp?alt=media",
+      "name" : "Código facilito"
+    },
+    "-hghjgvn" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/sponsors%2Fsponsor-codigofacilito.webp?alt=media",
+      "name" : "Código facilillo"
+    }
+  },
+  "team-leaders" : {
+    "-dadbasnmdb" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/leaders%2Fbezael.jpg?alt=media",
+      "name" : "Bezael"
+    },
+    "-daksdnasmdda" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/leaders%2Fsacha.jpg?alt=media",
+      "name" : "Sacha"
+    },
+    "-sabdbasdmndmah" : {
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/leaders%2Ffernando.jpg?alt=media",
+      "name" : "Fernando Herrera"
+    }
+  },
+  "users" : {
+    "7cs4FILGhBRi5v6JglpjwAbYYl42" : {
+      "email" : "zzalimjoo@gmail.com",
+      "nickname" : "Zzalim"
+    },
+    "Myw4tpS76DRQt01GUE5Wa7gMvZG3" : {
+      "bio" : "test",
+      "birthday" : "1998-11-15T05:00:00.000Z",
+      "country" : "PER",
+      "email" : "testest@gmail.com",
+      "facebook" : "cjosue15",
+      "gender" : 1,
+      "github" : "cjosue15",
+      "linkedin" : "cjosue15",
+      "nick" : "cjosue15",
+      "nickname" : "cjosue159",
+      "twitter" : "cjosue15"
+    },
+    "Oot05reZH1Nk3qJzw95P5s4cdJQ2" : {
+      "email" : "iram@gmail.com",
+      "nickname" : "IramML"
+    },
+    "V0sTtVs6vVUNmIYCLklTkWZjBxw2" : {
+      "email" : "iramml@gmail.com",
+      "nick" : "Iram_xD"
+    },
+    "WBJoDtZn4sOKdkbkV1IUYpVZi7v1" : {
+      "badges" : [ {
+        "description" : "Tu primera insignia",
+        "how_to_earn" : "Completa todos los datos de tu perfil",
+        "id" : "-dasjkdasdmask",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/badges%2Ficonfinder__christmas_badge_1679534.png?alt=media",
+        "name" : "Social"
+      } ],
+      "bio" : "test",
+      "birthday" : "2021-03-20T03:36:55.428Z",
+      "country" : "DZA",
+      "email" : "cmorales@yopmail.com",
+      "facebook" : "tes",
+      "gender" : 1,
+      "github" : "test",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/profiles%2FCaptura%20de%20pantalla%20de%202021-03-16%2011-58-53.png?alt=media&token=e7d5be4d-22bd-4ef5-bf37-895951d8ff70",
+      "linkedin" : "est",
+      "nickname" : "josue",
+      "profession" : 2,
+      "twitter" : "est"
+    },
+    "cv3rkn5C6bXcK6cmLR0aBtB5Sf93" : {
+      "email" : "claudio@email.com",
+      "nickname" : "Claudio"
+    },
+    "mz2BZ5TI2JOUHbmjtMuT1G1Pm6x2" : {
+      "email" : "irammtzls@gmail.com",
+      "nickname" : "IramML"
+    },
+    "uh8ca2hvuZWtfk1dd9nN86ClOWn2" : {
+      "email" : "test2@test.com",
+      "nickname" : "tetst"
+    },
+    "uiJGBytWFxTofyt01S1f1xbsY883" : {
+      "email" : "test@iram.com",
+      "nick" : "IramTest"
+    },
+    "yB6YmiabPCOKfTUbVFMLxeN3kMm1" : {
+      "badges" : [ {
+        "description" : "Tu primera insignia",
+        "how_to_earn" : "Completa todos los datos de tu perfil",
+        "id" : "-dasjkdasdmask",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/badges%2Ficonfinder__christmas_badge_1679534.png?alt=media",
+        "name" : "Social"
+      } ],
+      "bio" : "Soy un desarrollador xD",
+      "birthday" : "2002-08-16T05:00:00.000Z",
+      "country" : "MEX",
+      "email" : "IramMartinezLamas@gmail.com",
+      "facebook" : "iramml",
+      "gender" : 1,
+      "github" : "IramML",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/team-angular-44-comfeco.appspot.com/o/profiles%2FCaptura%20de%20pantalla%202021-03-01%20084050.jpg?alt=media&token=43cf9049-bc2c-429c-ad39-fb10e6052f36",
+      "linkedin" : "iramml",
+      "nick" : "IramML",
+      "nickname" : "Iraam",
+      "profession" : 3,
+      "twitter" : "iramml"
+    }
+  }
+}
