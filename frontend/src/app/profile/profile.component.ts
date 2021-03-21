@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-submodule',
-  templateUrl: './submodule.component.html',
-  styleUrls: ['./submodule.component.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss'],
 })
-export class SubmoduleComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   tabColor: string = 'primary';
 
   constructor() {}
